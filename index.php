@@ -233,7 +233,6 @@
                         $('#jarItems').find('li').on('click', function () {
                             var jarInfo = jars[$(this).attr('rel')];
                             $('#jarOmschrijving').text(jarInfo['beschrijving']);
-//                            $('#jarItems.wrapper-half-right').css('background-image', 'url(../img/Jars/'+jarInfo['afbeelding']+')');
                             $('#jarItemStyle').text('#jarItems.wrapper-half-right::before {' +
                                 'background-image: url(img/Jars/' + jarInfo['afbeelding'] + ');' +
                                 'background-size: cover;}');
