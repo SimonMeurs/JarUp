@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="b30ba42e-5f21-4eff-8472-6c3026dcbf97" name="JarUp" url="http://jarup.be">
+        <fileTransfer host="jarup.be" port="21" password="dfe0dfcbdfd8dfffdfdadf98df9adf9bdf9f" username="jarupbe@jarup.be">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

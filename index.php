@@ -19,6 +19,12 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <style>
+        h1, h2, h3, h4 {
+            font-family: 'Courier New', serif
+        }
+    </style>
 </head>
 
 <body id="skrollr-body" data-spy="scroll" data-target=".navbar">
@@ -45,7 +51,7 @@
                         Up</a>
                 </div>
                 <div id="navbar" class="collapse navbar-collapse pull-right">
-                    <ul class="nav navbar-nav">
+                    <ul class="nav navbar-nav" style="font-family: 'Courier New',serif">
                         <li><a href="#bck-img1">Wat doen we?</a></li>
                         <li><a href="#bck-img3">Mason Jars</a></li>
                         <li><a href="#TruckerCaps">Trucker Caps</a></li>
@@ -64,8 +70,28 @@
     <!-- A large Wrapper with background image and the extra wrapper-hero class. Use this class to add unique "hero-only" styles. The background image uses the skrollr script for parallax effect -->
 
     <div class="owl-carousel">
+        <? if ($handle = opendir('./img/Jars')): ?>
+            <? while (false !== ($entry = readdir($handle))): if (strpos($entry, '.') <> 0): ?>
+                <section class="wrapper wrapper-hero wrapper-lg wrapper-bck-image-full"
+                         style="background-image: url(<?= "img/Jars/$entry" ?>);"
+                         data-start="background-position:0% 50%;" data-end="background-position:0% 0%;">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <h2>Jar Up</h2>
+                            </div>
+                            <div class="col-md-5"></div>
+                            <div class="col-md-2 text-center">
+                                <!--<img src="img/JarUp.png" style="height: 100px; width: auto;" alt="Jar Up Logo">-->
+                            </div>
+                            <div class="col-md-5"></div>
+                        </div>
+                    </div>
+                </section>
+            <? endif; endwhile; ?>
+        <? else: ?>
         <section class="wrapper wrapper-hero wrapper-lg wrapper-bck-image-full"
-                 style="background-image: url(img/MasonJar1.jpg);"
+                 style="background-image: url(img/Jars/MasonJar1.jpg);"
                  data-start="background-position:0% 100%;" data-end="background-position:0% 0%;">
             <div class="container">
                 <div class="row">
@@ -81,7 +107,7 @@
             </div>
         </section>
         <section class="wrapper wrapper-hero wrapper-lg wrapper-bck-image-full"
-                 style="background-image: url(img/JarUp2.jpg);"
+                 style="background-image: url(img/Jars/MasonJar4.jpg);"
                  data-start="background-position:0% 100%;" data-end="background-position:0% 0%;">
             <div class="container">
                 <div class="row">
@@ -96,22 +122,7 @@
                 </div>
             </div>
         </section>
-        <section class="wrapper wrapper-hero wrapper-lg wrapper-bck-image-full"
-                 style="background-image: url(img/MasonJar4.jpg);"
-                 data-start="background-position:0% 100%;" data-end="background-position:0% 0%;">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <h2>Jar Up</h2>
-                    </div>
-                    <div class="col-md-5"></div>
-                    <div class="col-md-2 text-center">
-                        <!--<img src="img/JarUp.png" style="height: 100px; width: auto;" alt="Jar Up Logo">-->
-                    </div>
-                    <div class="col-md-5"></div>
-                </div>
-            </div>
-        </section>
+        <? endif; ?>
     </div>
     <!-- ********************* HERO WRAPPER END ********************* -->
     <!-- ************************************************************ -->
@@ -128,7 +139,7 @@
                     <h4>Wat doen we?</h4>
 
                     <p><i>Wij zijn de mini onderneming van 2015-2016 van het Paridaensinstituut te Leuven en we stellen
-                        met trots onze mini onderneming Jar Up voor</i></p>
+                            met trots onze mini onderneming Jar Up voor.</i></p>
 
                     <p>
                         Ook dit jaar gaf Vlajo weer de kans aan de schoolgaande jeugd over heel België om volledig op
@@ -180,8 +191,9 @@
                     <h4>Zo veel mogelijkheden</h4>
 
                     <p>
-                        Onze Mason Jars zijn erg veelzijdig. Zo maken we ze bijvoorbeeld met badzout en zeep en je kan
-                        ze gebruiken als zakdoekendoos en beker.
+                        De Jar Up Mason Jars zijn erg veelzijdig. Jar Up probeert steeds nieuwe gevarieerde Mason Jars
+                        te creëren want er zijn zoveel mogelijkheden. Jar Up speelt in op verschillende thema's (bv.
+                        limited edition kerst jars)
                     </p>
                 </div>
             </div>

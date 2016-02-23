@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" uploadOnCheckin="81bb2086-b008-4865-b13a-12421feeb57b">
+  <component name="PublishConfigData" autoUpload="Always" serverName="JarUp" uploadOnCheckin="81bb2086-b008-4865-b13a-12421feeb57b">
     <serverData>
+      <paths name="JarUp">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/www" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
       <paths name="SimonMeurs">
         <serverdata>
           <mappings>
@@ -11,5 +18,6 @@
       </paths>
     </serverData>
     <option name="myUploadOnCheckinName" value="SimonMeurs" />
+    <option name="myAutoUpload" value="ALWAYS" />
   </component>
 </project>
