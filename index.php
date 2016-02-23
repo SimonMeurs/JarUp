@@ -20,9 +20,17 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+
     <style>
         h1, h2, h3, h4 {
             font-family: 'Courier New', serif
+        }
+    </style>
+    <style id="jarItemStyle">
+        #jarItems.wrapper-half-right::before {
+            background-image: url(img/Jars/MasonJar1.jpg);
+            background-size: cover;
         }
     </style>
 </head>
@@ -195,11 +203,82 @@
                         te creëren want er zijn zoveel mogelijkheden. Jar Up speelt in op verschillende thema's (bv.
                         limited edition kerst jars)
                     </p>
+                    <button class="btn btn-sm btn-default" onclick="$('#jarItems').toggle();">Bekijk de Jars</button>
                 </div>
             </div>
         </div>
     </section>
     <!-- ********************* DARK WRAPPER END ************************ -->
+    <!-- *************************************************************** -->
+
+    <!-- ******************************************************** -->
+    <!-- ********************* WHITE WRAPPER ********************* -->
+    <!-- Half colored wrapper with background image on the left - Check the SCSS/CSS file for the section id to change the background image path -->
+
+    <section id="jarItems" class="wrapper wrapper-primary wrapper-half-right" style="display: none;">
+        <div class="container" style="padding-top: 0;">
+            <div class="row">
+                <div class="col-xs-6" style="margin-top: 50px;">
+                    <ul class="list-inline" id="navInJars">
+                        <li rel="drinkjar"><a>Drink</a></li>
+                        <li rel="moneyjar"><a>Money</a></li>
+                        <li rel="zoutjar"><a>Bath salts</a></li>
+                        <li rel="badjar"><a>Bath & Shower</a></li>
+                        <li rel="tissuejar"><a>Tissues</a></li>
+                        <li rel="cactusjar"><a>Cactus</a></li>
+                    </ul>
+                    <p id="jarOmschrijving"></p>
+                    <p><b id="jarPrijs"></b></p>
+                    <script>
+                        $('#jarItems').find('li').on('click', function () {
+                            var jarInfo = jars[$(this).attr('rel')];
+                            $('#jarOmschrijving').text(jarInfo['beschrijving']);
+//                            $('#jarItems.wrapper-half-right').css('background-image', 'url(../img/Jars/'+jarInfo['afbeelding']+')');
+                            $('#jarItemStyle').text('#jarItems.wrapper-half-right::before {' +
+                                'background-image: url(img/Jars/' + jarInfo['afbeelding'] + ');' +
+                                'background-size: cover;}');
+                            $('#jarPrijs').text(jarInfo['prijs'] + ' euro');
+                        });
+                        var jars = {
+                            drinkjar: {
+                                prijs: 6,
+                                afbeelding: 'drinkjar.jpg',
+                                beschrijving: 'Een mooie jar'
+                            },
+                            moneyjar: {
+                                prijs: 6,
+                                afbeelding: 'MasonJar1.jpg',
+                                beschrijving: 'Een mooie jar, waar je geld in kan steken.'
+                            },
+                            zoutjar: {
+                                prijs: 6.5,
+                                afbeelding: 'NSIM8063.jpg',
+                                beschrijving: 'Een fantastische jar met tof zout en fenomenale geuren.'
+                            },
+                            badjar: {
+                                prijs: 6.5,
+                                afbeelding: 'MasonJar2.jpg',
+                                beschrijving: 'Een fenomenale jar en een fijne geur en bubbels die al ' +
+                                'je badjes fijn gaat maken'
+                            },
+                            tissuejar: {
+                                prijs: 8,
+                                afbeelding: 'IMG_1546.JPG',
+                                beschrijving: 'Een awesome jar met zakdoekjes in. Ideaal voor op tafel of naast de zetel.'
+                            },
+                            cactusjar: {
+                                prijs: 8,
+                                afbeelding: 'IMG_1540.JPG',
+                                beschrijving: 'Een mooie jar met een awesome cactus in. ' +
+                                'Fantastisch voor bij het raam.'
+                            }
+                        };
+                    </script>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ********************* LIGHT WRAPPER END ************************ -->
     <!-- *************************************************************** -->
 
 
