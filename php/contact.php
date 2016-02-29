@@ -1,6 +1,6 @@
 <?php
 if (isset($_POST['submit'])) {
-    $to = "templatedeck@mailinator.com"; // this is your Email address
+    $to = "info@jarup.be"; // this is your Email address
     $from = $_POST['email']; // this is the sender's Email address
     $name = $_POST['name'];
     $subject = "Form submission";
@@ -12,7 +12,6 @@ if (isset($_POST['submit'])) {
     $headers2 = "From:" . $to;
     mail($to, $subject, $message, $headers);
     mail($from, $subject2, $message2, $headers2); // sends a copy of the message to the sender
-    header('Location: ../contact-form-thank-you.html');
     // You can also use header('Location: thank_you.php'); to redirect to another page.
     // You cannot use header and echo together. It's one or the other.
 }

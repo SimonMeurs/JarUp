@@ -1,3 +1,5 @@
+<? require_once 'php/contact.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -87,6 +89,12 @@
                         <div class="row">
                             <div class="col-md-12 text-center">
                                 <h2>Jar Up</h2>
+                                <? if ($_POST): ?>
+                                    <div class="bg bg-success">
+                                        <p style="color: #000; font-family: 'Courier New', serif;">Uw bericht is
+                                            verzonden</p>
+                                    </div>
+                                <? endif; ?>
                             </div>
                             <div class="col-md-5"></div>
                             <div class="col-md-2 text-center">
@@ -363,51 +371,41 @@
     <!-- ********************* DARK WRAPPER ********************* -->
     <!-- A small and dark content wrapper for some kind of footer content -->
 
-    <!--<section id="contact" class="wrapper wrapper-dark wrapper-sm">-->
-    <!--<div class="container">-->
-    <!--<div class="row">-->
-    <!--<div class="col-md-3">-->
-    <!--<h5>Sample Widget</h5>-->
-    <!--<p>-->
-    <!--Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. -->
-    <!--</p>-->
-    <!--</div>-->
-    <!--<div class="col-md-3">-->
-    <!--<h5>Sample Widget</h5>-->
-    <!--<p>-->
-    <!--Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. -->
-    <!--</p>-->
-    <!--</div>-->
-    <!--<div class="col-md-6">-->
-    <!--<h5>Contact us</h5>-->
+    <section id="contact" class="wrapper wrapper-dark wrapper-sm">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h5>Contact us</h5>
 
-    <!--<form action="php/contact.php" method="post" role="form" data-toggle="validator">-->
-    <!---->
-    <!--<div class="form-group">-->
-    <!--<label for="inputName" class="control-label">Name</label>-->
-    <!--<input type="text" name="name" class="form-control"  required ><br>-->
-    <!--<div class="help-block with-errors"></div>-->
-    <!--</div>-->
-    <!---->
-    <!--<div class="form-group">-->
-    <!--<label for="inputLastName" class="control-label">Email</label> -->
-    <!--<input type="email" name="email" class="form-control"  required ><br>-->
-    <!--<div class="help-block with-errors"></div>-->
-    <!--</div>-->
-    <!---->
-    <!--<div class="form-group">-->
-    <!--<label for="inputLastName" class="control-label">Your Message</label> -->
-    <!--<textarea rows="5" name="message" cols="30" class="form-control"  required ></textarea><br>-->
-    <!--<div class="help-block with-errors"></div>-->
-    <!--</div>-->
-    <!--<div class="form-group">-->
-    <!--<input type="submit" name="submit" value="Submit" class="btn btn-default">-->
-    <!--</div>-->
-    <!--</form>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--</section>-->
+                    <form method="post" role="form" data-toggle="validator">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="inputName" class="control-label">Name</label>
+                                <input type="text" name="name" class="form-control" required><br>
+                                <div class="help-block with-errors"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputLastName" class="control-label">Email</label>
+                                <input type="email" name="email" class="form-control" required><br>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="inputLastName" class="control-label">Your Message</label>
+                                <textarea rows="5" name="message" cols="30" class="form-control"
+                                          required></textarea><br>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" name="submit" value="Submit" class="btn btn-default">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+    </section>
     <!-- ********************* DARK WRAPPER END ********************* -->
     <!-- ************************************************************ -->
 
