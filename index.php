@@ -380,23 +380,58 @@
                     <form method="post" role="form" data-toggle="validator">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="inputName" class="control-label">Name</label>
-                                <input type="text" name="name" class="form-control" required><br>
+                                <label for="inputName" class="control-label">Naam</label>
+                                <input type="text" id="inputName" name="name" class="form-control" required>
                                 <div class="help-block with-errors"></div>
+                                <br>
                             </div>
 
                             <div class="form-group">
-                                <label for="inputLastName" class="control-label">Email</label>
-                                <input type="email" name="email" class="form-control" required><br>
+                                <label for="inputEmail" class="control-label">Email</label>
+                                <input type="email" id="inputEmail" name="email" class="form-control" required>
                                 <div class="help-block with-errors"></div>
+                                <br>
+                            </div>
+
+                            <?
+                            $personen = array(
+                                "Mara Socquet",
+                                "Chloé Humblet",
+                                "Coraline Kusters",
+                                "Elise Schrevens",
+                                "Belma Ozdemir",
+                                "Roksolana Mendela",
+                                "Martijn Geusens",
+                                "Lukas Schouteden",
+                                "Maarten De Winter",
+                                "Linde Tobback",
+                                "Andreas Meurs",
+                                "Lara Boelen",
+                                "Katrien Huybrecht"
+                            );
+                            asort($personen);
+                            ?>
+                            <div class="form-group">
+                                <label for="kennis" class="control-label">Wie ken je bij Jar Up?</label>
+                                <select name="kennis" id="kennis" class="form-control" required>
+                                    <option></option>
+                                    <? foreach ($personen as $persoon): ?>
+                                        <option value="<?= $persoon ?>"><?= $persoon ?></option>
+                                    <? endforeach; ?>
+                                </select>
+                                <p class="help-block">Je moet hier aanduiden wie je kent in het project</p>
+                                <div class="help-block with-errors"></div>
+                                <br>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="inputLastName" class="control-label">Your Message</label>
-                                <textarea rows="5" name="message" cols="30" class="form-control"
-                                          required></textarea><br>
+                                <label for="inputMessage" class="control-label">Uw bericht</label>
+                                <textarea rows="5" name="message" cols="30" class="form-control" id="inputMessage"
+                                          required></textarea>
+                                <p class="help-block">Je kan hier zetten wat je wilt bestellen</p>
                                 <div class="help-block with-errors"></div>
+                                <br>
                             </div>
                             <div class="form-group">
                                 <input type="submit" name="submit" value="Submit" class="btn btn-default">
