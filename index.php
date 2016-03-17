@@ -80,8 +80,9 @@
     <!-- A large Wrapper with background image and the extra wrapper-hero class. Use this class to add unique "hero-only" styles. The background image uses the skrollr script for parallax effect -->
 
     <div class="owl-carousel">
-        <? if ($handle = opendir('./img/Jars')): ?>
-            <? while (false !== ($entry = readdir($handle))): if (strpos($entry, '.') <> 0): ?>
+        <? $count = 0;
+        if ($handle = opendir('./img/Jars')): ?>
+            <? while (false !== ($entry = readdir($handle))): if (strpos($entry, '.') <> 0): $count++; ?>
                 <section class="wrapper wrapper-hero wrapper-lg wrapper-bck-image-full"
                          style="background-image: url(<?= "img/Jars/$entry" ?>);"
                          data-start="background-position:0% 50%;" data-end="background-position:0% 0%;">
@@ -519,8 +520,8 @@
         autoHeight: true,
         items: 1,
         loop: true,
-        autoplay: false,
-        autoplaySpeed: 1500,
+        autoplay: true,
+        autoplaySpeed: 1000,
         margin: 0,
         stagePadding: 0,
         smartSpeed: 0
