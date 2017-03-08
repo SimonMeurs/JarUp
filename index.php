@@ -238,50 +238,6 @@
                     </ul>
                     <p id="jarOmschrijving"></p>
                     <p><b id="jarPrijs"></b></p>
-                    <script>
-                        $('#jarItems').find('li').on('click', function () {
-                            var jarInfo = jars[$(this).attr('rel')];
-                            $('#jarOmschrijving').text(jarInfo['beschrijving']);
-                            $('#jarItemStyle').text('#jarItems.wrapper-half-right::before {' +
-                                'background-image: url(img/Jars/' + jarInfo['afbeelding'] + ');' +
-                                'background-size: cover;}');
-                            $('#jarPrijs').text(jarInfo['prijs'] + ' euro');
-                        });
-                        var jars = {
-                            drinkjar: {
-                                prijs: 6,
-                                afbeelding: 'drinkjar.jpg',
-                                beschrijving: 'Een mooie jar'
-                            },
-                            moneyjar: {
-                                prijs: 6,
-                                afbeelding: 'MasonJar1.jpg',
-                                beschrijving: 'Een mooie jar, waar je geld in kan steken.'
-                            },
-                            zoutjar: {
-                                prijs: 6.5,
-                                afbeelding: 'NSIM8063.jpg',
-                                beschrijving: 'Een fantastische jar met tof zout en fenomenale geuren.'
-                            },
-                            badjar: {
-                                prijs: 6.5,
-                                afbeelding: 'MasonJar2.jpg',
-                                beschrijving: 'Een fenomenale jar en een fijne geur en bubbels die al ' +
-                                'je badjes fijn gaat maken'
-                            },
-                            tissuejar: {
-                                prijs: 8,
-                                afbeelding: 'IMG_1546.JPG',
-                                beschrijving: 'Een awesome jar met zakdoekjes in. Ideaal voor op tafel of naast de zetel.'
-                            },
-                            cactusjar: {
-                                prijs: 8,
-                                afbeelding: 'IMG_1540.JPG',
-                                beschrijving: 'Een mooie jar met een awesome cactus in. ' +
-                                'Fantastisch voor bij het raam.'
-                            }
-                        };
-                    </script>
                 </div>
             </div>
         </div>
@@ -540,6 +496,50 @@
         maxSpeedY: 0.2,
         minSpeedX: 0.005,
         minSpeedY: 0.005
+    });
+</script>
+<script>
+    var jars = {
+        drinkjar: {
+            prijs: 6,
+            afbeelding: 'drinkjar.jpg',
+            beschrijving: 'Een mooie jar'
+        },
+        moneyjar: {
+            prijs: 6,
+            afbeelding: 'MasonJar1.jpg',
+            beschrijving: 'Een mooie jar, waar je geld in kan steken.'
+        },
+        zoutjar: {
+            prijs: 6.5,
+            afbeelding: 'NSIM8063.jpg',
+            beschrijving: 'Een fantastische jar met tof zout en fenomenale geuren.'
+        },
+        badjar: {
+            prijs: 6.5,
+            afbeelding: 'MasonJar2.jpg',
+            beschrijving: 'Een fenomenale jar en een fijne geur en bubbels die al ' +
+            'je badjes fijn gaat maken'
+        },
+        tissuejar: {
+            prijs: 8,
+            afbeelding: 'IMG_1546.JPG',
+            beschrijving: 'Een awesome jar met zakdoekjes in. Ideaal voor op tafel of naast de zetel.'
+        },
+        cactusjar: {
+            prijs: 8,
+            afbeelding: 'IMG_1540.JPG',
+            beschrijving: 'Een mooie jar met een awesome cactus in. ' +
+            'Fantastisch voor bij het raam.'
+        }
+    };
+    $('#jarItems').find('li').on('click', function () {
+        var jarInfo = jars[$(this).attr('rel')];
+        $('#jarOmschrijving').text(jarInfo['beschrijving']);
+        $('#jarItemStyle').text('#jarItems.wrapper-half-right::before {' +
+            'background-image: url(img/Jars/' + jarInfo['afbeelding'] + ');' +
+            'background-size: cover;}');
+        $('#jarPrijs').text(jarInfo['prijs'] + ' euro');
     });
 </script>
 
